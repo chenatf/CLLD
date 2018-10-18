@@ -6,7 +6,7 @@ Rui Chen at the southern university of science and technology in the Jiankui He 
 ## Quick start
 1. Installation.
 ```
-git clone 
+git clone https://github.com/chenatf/CLLD.git
 ``` 
 2.	Run the script.
 
@@ -41,7 +41,7 @@ make
 ```
 3. download the program from the github.
 ```
-git clone 
+git clone https://github.com/chenatf/CLLD.git
 ```
 
 ## Usage
