@@ -17,7 +17,7 @@ git clone https://github.com/chenatf/CLLD.git
 ```
 * call germline de novo large deletion
 ```
-./cldd_call -f ref.fa -b parents1.bam,parents2.bam,offspring1.bam,offspring2.bam -p family -o output -a parents1,parents2 -g offspring1,offspring2
+./cldd_call -f ref.fa -s targets.bed -b parents1.bam,parents2.bam,offspring1.bam,offspring2.bam -p family -o output -a parents1,parents2 -g offspring1,offspring2
 ```
 
 ## Installation
@@ -94,7 +94,7 @@ prefix.dist.html   Coverage report for BAM files by mosdepth.
 
 ### clld_call
 ```
-clld call [options] -f <reference> -b <bam> -p <prefix> -o <output_dir> -a <parents> -g <offspring>
+clld call [options] -f <reference> -s <bed> -b <bam> -p <prefix> -o <output_dir> -a <parents> -g <offspring>
 ```
 #### Required arguments
 ```
