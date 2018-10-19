@@ -35,7 +35,8 @@ rawdata_r2=(${rawdata_r2//,/ })
 number=${#rawdata_r1[@]}
 
 ## load the config file
-source ./clld.config
+source ./clld_io.config
+source ./clld_software.config
 
 ## check the directory
 source ./clld_check_dir.sh
