@@ -93,7 +93,7 @@ mapping()
     merge_bam=($(ls "${speedseq_path}/${prefix}"_*_.bam))
     time samtools merge -f "${samtools_path}/${prefix}.bam" "${merge_bam[@]}"
     time samtools index "${samtools_path}/${prefix}.bam"
-    time mapping_ratio "${samtools_path}/${prefix}.bam"
+    time mapping_ratio "${samtools_path}/${prefix}.bam" && rm "${speedseq_path}/*"
 
     ## coverage analysis
     echo "step5: run mosdepth to calucate coverage\n"
