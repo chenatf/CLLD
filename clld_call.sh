@@ -71,7 +71,7 @@ call_manta()
     time "${manta_path}/runWorkflow.py" -m local -j ${threads}
     gzip -d "${manta_path}/results/variants/diploidSV.vcf.gz"
     cp "${manta_path}/results/variants/diploidSV.vcf" "${result_path}/${prefix}.diploidSV.vcf"
-    cp "${manta_path}/re"
+    cp -r "${manta_path}/results/evidence/" "${result_path}"
     time python clld.py "${result_path}/${prefix}" "${result_path}/${prefix}.diploidSV.vcf" "${target}" "${parents}" "${offspring}"
 }
 
