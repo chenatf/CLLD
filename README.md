@@ -1,7 +1,7 @@
 # CLLD (CRISPR large deletion Detector)
 ### version 1.0.0
 ## Description
-This program is designed to detect large deletions at the target sites using the NGS whole genome sequence data. 
+This program is designed to detect germline de novo large deletions at the target sites using the NGS whole genome sequence data. 
 ## Authors
 Rui Chen at the southern university of science and technology in the Jiankui He lab wrote the key source codes.
 ## Quick start
@@ -15,7 +15,7 @@ git clone https://github.com/chenatf/CLLD.git
 ```
 ./cldd_mapping -r @RG\tID:id\tSM:sample\tLB:lib -f ref.fa -1 read1_lane1.fq,read1_lane2.fq -2 read2_lane1.fq,read2_lane2.fq -p sample -o output
 ```
-* call large deletion
+* call germline de novo large deletion
 ```
 ./cldd_call -f ref.fa -b parents1.bam,parents2.bam,offspring1.bam,offspring2.bam -p family -o output -a parents1,parents2 -g offspring1,offspring2
 ```
@@ -59,7 +59,7 @@ clld_software.config   record the software path of the program. Please change it
 ## Usage
 CLLD is an analysis pipeline consists of two part:
 1.	clld_mapping mapping the raw sequence data pair-end fastq files to the reference and get a duplicate-marked, sorted, indexed BAM file with speedseq align. It also calculate the mapping ratio and give the quality control and coverage analysis report.
-2.	Clld_call read the family BAM files and call the large deletion in the genome with manta, then report the de novo large deletions happened in the target sites.
+2.	Clld_call read the family BAM files and call the large deletion in the genome with manta, then report the germline de novo large deletions happened in the target sites.
 
 
 
