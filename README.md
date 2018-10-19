@@ -99,7 +99,7 @@ clld call [options] -f <reference> -b <bam> -p <prefix> -o <output_dir> -a <pare
 #### Required arguments
 ```
 -f      Genome reference fasta file.
--s      Target sites bed file.
+-s      Target sites bed file. Three columns : chromosome start end.
 -b      BAM file(s) (comma separated). example: -b in1.bam,in2.bam,in3.bam
 -p      Output prefix
 -o      Output directory
