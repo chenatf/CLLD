@@ -45,10 +45,23 @@ make
 git clone https://github.com/chenatf/CLLD.git
 ```
 
+## Configuration
+
+#### IO config
+```
+clld_io.config   record the input and output path of the program. Please do not change it if not necessary.
+```
+#### Software path config
+```
+clld_software.config   record the software path of the program. Please change it into your own path.
+```
+
 ## Usage
 CLLD is an analysis pipeline consists of two part:
 1.	clld_mapping mapping the raw sequence data pair-end fastq files to the reference and get a duplicate-marked, sorted, indexed BAM file with speedseq align. It also calculate the mapping ratio and give the quality control and coverage analysis report.
 2.	Clld_call read the family BAM files and call the large deletion in the genome with manta, then report the de novo large deletions happened in the target sites.
+
+
 
 ### clld_mapping
 ```
