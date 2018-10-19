@@ -67,13 +67,13 @@ mapping()
     do
         ## get the data number
         number=$(expr ${number} - 1)
-	    data_r1=${rawdata_r1[${number}]}
+	data_r1=${rawdata_r1[${number}]}
         data_r2=${rawdata_r2[${number}]}
 
         ## quality control
         echo "step1: run fastp to imporve the quality of ${data_r1}, ${data_r2}\n"
         time fastp -w ${fastp_threads} -c \
-        -h "${fastp_path}/${prefix}_${number}.html" -j "${fastp_path}/${prefix}_${number}.json" \
+        -h "${result_path}/${prefix}_${number}.html" -j "${fastp_path}/${prefix}_${number}.json" \
         -i "${data_r1}" -o "${fastp_path}/${prefix}_${number}_r1.fq.gz" \
         -I "${data_r2}" -O "${fastp_path}/${prefix}_${number}_r2.fq.gz"
 
@@ -98,7 +98,7 @@ mapping()
     ## coverage analysis
     echo "step5: run mosdepth to calucate coverage\n"
     time mosdepth -t ${mosdepth_threads} "${mosdepth_path}/${prefix}" "${samtools_path}/${prefix}.bam"
-    time python3 "${plot-dist}" -o "${mosdepth_path}/${prefix}.dist.html" "${prefix}" \
+    time python3 "${plot-dist}" -o "${result_path}/${prefix}.dist.html" "${prefix}" \
     "${mosdepth_path}/${prefix}.mosdepth.global.dist.txt"
 }
 
