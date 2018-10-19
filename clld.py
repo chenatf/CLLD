@@ -31,10 +31,10 @@ vcf_reader = vcf.Reader(open(vcf_file,'r'))
 region = pd.read_table(bed_file,header=None,names=['chr','start','end'])
 result = {}
 
-def is_deletion(record,sample):
+def is_large_deletion(record,sample):
     call = record.genotype(sample)
     flag = False
-    if record.is_deletion and call['FT'] == 'PASS':
+    if 'DEL' in record.ID and call['FT'] == 'PASS':
         gt = call['GT'].split('/')
         for i in gt:
             if i == '1':
@@ -46,7 +46,7 @@ def de_novo_deletion(record,proband,parent1,parent2):
     call_proband = record.genotype(proband)
     call_parent1 = record.genotype(parent1)
     call_parent2 = record.genotype(parent2)
-    if is_deletion(record,proband) == True and call_parent1['FT'] == 'PASS' and call_parent2['FT'] == 'PASS':    
+    if is_large_deletion(record,proband) == True and call_parent1['FT'] == 'PASS' and call_parent2['FT'] == 'PASS':    
         gt_proband = call_proband['GT']
         gt_parent1 = call_parent1['GT'].split('/')
         gt_parent2 = call_parent2['GT'].split('/')
