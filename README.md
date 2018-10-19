@@ -121,7 +121,7 @@ evidence.*.bam   Evidence reads of the candidate SVs identified from that input 
 from the original bam by manta.
 ```
 ```
-prefix.csv   A table report the de novo large deletions at the target sites.
+prefix.csv   A table report the germline de novo large deletions at the target sites.
 ```
 Column | Description
 ------ | -----------
