@@ -90,7 +90,7 @@ mapping()
 
     ## merge batches
     echo "step4: run samtools to merge batches and calculate the total mapping ratio\n"
-    merge_bam=($(ls "${speedseq_path}/${prefix}"_*_markdup_.bam))
+    merge_bam=($(ls "${speedseq_path}/${prefix}"_*_.bam))
     time samtools merge -f "${samtools_path}/${prefix}.bam" "${merge_bam[@]}"
     time samtools index "${samtools_path}/${prefix}.bam"
     time mapping_ratio "${samtools_path}/${prefix}.bam" && rm "${merge_bam[@]}"
