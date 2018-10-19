@@ -1,4 +1,4 @@
-# CLLD (CRISPR large deletion Detector)
+# CLLD (CRISPR large deletion Detector) version 1.0.0
 ## Description
 This program is designed to detect large deletions at the target sites using the NGS whole genome sequence data. 
 ## Authors
