@@ -7,7 +7,6 @@ Created on Sun Sep  9 00:16:34 2018
 """
 
 import vcf
-from collections import defaultdict
 import pandas as pd
 import sys
 
