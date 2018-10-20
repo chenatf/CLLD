@@ -125,17 +125,22 @@ prefix.csv   A table report the germline de novo large deletions at the target s
 ```
 Column | Description
 ------ | -----------
-chromosome | chromosome of the large deletion
-start	| Start site of the large deletion
-end	| End site of the large deletion
-length	| Length of the large deletion
-Sample	| Sample name of the offspring
-Target	| Target site of the large deletion
-genotype	| Genotype of the large deletion
+ID | Large deletion id in the VCF file. 
+Filter | Filter situation, if show PASS, it means all filters were passed. The detail can be found in VCF file.
+Chromosome | chromosome of the large deletion.
+Start	| Start site of the large deletion.
+End	| End site of the large deletion.
+Length	| Length of the large deletion.
+Sample	| Sample name of the offspring.
+Target	| Target site which the large deletion across.
+Genotype	| Genotype of the large deletion.
+Genotype Quality | Genotype Quality which was calculated by manta.
+Paired-reads | Spanning paired-read support for the ref and alt alleles.
+Split-reads | Split reads for the ref and alt alleles, for reads where P(allele|read)>0.999.
 
 ## Changelog
-
+2018.10.21 Release the 1.0.0 version. 
 ## Acknowledgements
-
+Thanks for my father and mother, my teacher and colleagues, the author of the packages and softwares whcih I used in this program.
 ## License and citation
 This program is under the MIT license.
