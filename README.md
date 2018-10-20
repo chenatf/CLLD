@@ -136,7 +136,7 @@ Target	| Target site which the large deletion across.
 Genotype	| Genotype of the large deletion.
 Genotype Quality | Genotype Quality which was calculated by manta.
 Paired-reads | Spanning paired-read support for the ref and alt alleles.
-Split-reads | Split reads for the ref and alt alleles, for reads where P(allele|read)>0.999.
+Split-reads | Split reads for the ref and alt alleles.
 
 ## Changelog
 2018.10.21 Release the 1.0.0 version. 
