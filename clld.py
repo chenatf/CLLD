@@ -92,12 +92,12 @@ for record in vcf_reader:
                     result['Genotype'].append(call['GT'])
                     result['Genotype Quality'].append(call['GQ'])
                     try:
-                        result['Spanning paired-read support for the ref and alt alleles'].append(str_print(call['PR']))
+                        result['Paired-reads'].append(str_print(call['PR']))
                     except:
-                        result['Spanning paired-read support for the ref and alt alleles'].append('NA')
+                        result['Paired-reads'].append('NA')
                     try:
-                        result['Split reads for the ref and alt alleles'].append(str_print(call['SR']))
+                        result['Split-reads'].append(str_print(call['SR']))
                     except:
-                        result['Split reads for the ref and alt alleles'].append('NA')
+                        result['Split-reads'].append('NA')
 result = pd.DataFrame(result)
 result.to_csv('{0}.csv'.format(prefix),index=False)
