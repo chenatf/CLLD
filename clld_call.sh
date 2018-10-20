@@ -27,7 +27,7 @@ while getopts "t:f:s:b:p:o:a:g:h" OPT; do
         g)
             offspring="${OPTARG}";;
         h)
-            echo "Usage: clld [options] -f <reference> -b <bam> -p <prefix> -o <output_dir> -a <parents> -g <offspring>" && exit 
+            echo "Usage: clld [options] -f <reference> -s <bed> -b <bam> -p <prefix> -o <output_dir> -a <parents> -g <offspring>" && exit 
     esac
 } done
 
