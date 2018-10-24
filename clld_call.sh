@@ -70,10 +70,10 @@ call_manta()
     ## run the workflow
     echo "run the manta to call structure variants\n"
     time "${manta_path}/runWorkflow.py" -m local -j ${threads}
-    gzip -d "${manta_path}/results/variants/diploidSV.vcf.gz"
-    cp "${manta_path}/results/variants/diploidSV.vcf" "${result_path}/${prefix}.diploidSV.vcf"
+    cp "${manta_path}/results/variants/diploidSV.vcf.gz" "${result_path}/${prefix}.diploidSV.vcf.gz"
+    cp "${manta_path}/results/variants/diploidSV.vcf.gz.tbi" "${result_path}/${prefix}.diploidSV.vcf.gz.tbi"
     cp -r "${manta_path}/results/evidence/" "${result_path}"
-    time python clld.py "${result_path}/${prefix}" "${result_path}/${prefix}.diploidSV.vcf" "${target}" "${parents}" "${offspring}"
+    time python clld.py "${result_path}/${prefix}" "${result_path}/${prefix}.diploidSV.vcf.gz" "${target}" "${parents}" "${offspring}"
 }
 
 ################################################################# MAIN #####################################################################
